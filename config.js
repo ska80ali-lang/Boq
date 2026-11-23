@@ -33,14 +33,14 @@ window.SITE_CONFIG = {
   MRP: "₹999",
   IMAGES: {
     LOGO: "",
-    HERO_MOCKUP: "/images/hero.webp",           // 16:9 banner
-    BOQ_COURSE: "/images/boq-course.webp",
-    QS_GUIDE: "/images/qs-guide.webp",
-    BILLING: "/images/billing.webp",
-    RATE_ANALYSIS: "/images/rate-analysis.webp",
-    BBS: "/images/bbs.webp",
-    EXCEL_SHEETS: "/images/excel-sheets.webp",
-    OG_IMAGE: "/images/og-image.jpg",
+    HERO_MOCKUP: "images/hero.webp",           // 16:9 banner
+    BOQ_COURSE: "images/boq-course.webp",
+    QS_GUIDE: "images/qs-guide.webp",
+    BILLING: "images/billing.webp",
+    RATE_ANALYSIS: "images/rate-analysis.webp",
+    BBS: "images/bbs.webp",
+    EXCEL_SHEETS: "images/excel-sheets.webp",
+    OG_IMAGE: "images/og-image.jpg",
     FAVICON: ""
   }
 };

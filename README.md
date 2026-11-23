@@ -59,4 +59,4 @@ Or with the CLI: `npm i -g vercel` then run `vercel --prod` in this folder.
 Facebook/WhatsApp/LinkedIn crawlers don't run JavaScript. Once your domain is live, paste the full image URL (for example `https://your-domain.com/images/og-image.jpg`) into the empty `content=""` of the `og:image` and `twitter:image` meta tags in `index.html` so link previews show the image.
 
 ## Local preview
-Open `index.html` directly in a browser, or run `npx serve .` in this folder.
+Run `npx serve .` in this folder and open the address it prints. (Opening `index.html` directly also works for the main page, but the footer policy links need a server.)
