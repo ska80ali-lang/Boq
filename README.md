@@ -13,7 +13,7 @@ Every link, image, price and brand value lives in `config.js` — you never need
 | `CONTACT_EMAIL` / `CONTACT_PHONE` | Shown in the footer as `mailto:` / `tel:` links (phone is intentionally left empty) | Hidden |
 | `TERMS_LINK` / `REFUND_LINK` / `PRIVACY_LINK` / `DELIVERY_LINK` / `DISCLAIMER_LINK` / `CONTACT_LINK` | Policy pages (built-in pages by default, or any full URL) | Hidden |
 | `META_PIXEL_ID` | Optional Meta Pixel ID (numbers only) | No tracking code is loaded |
-| `PRICE` / `MRP` | e.g. `"₹249"` / `"₹999"` — filled in everywhere on the page | — |
+| `PRICE` / `MRP` | e.g. `"₹199"` / `"₹999"` — filled in everywhere on the page | — |
 | `IMAGES.*` | Full image URLs (https://…) | A dashed placeholder with the slot name is shown |
 
 Paste an image URL and the image appears automatically in that slot — no other change needed.

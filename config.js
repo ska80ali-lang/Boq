@@ -18,7 +18,7 @@ window.SITE_CONFIG = {
   DISCLAIMER_LINK: "/disclaimer",
   CONTACT_LINK: "/contact",
   META_PIXEL_ID: "",         // optional
-  PRICE: "₹249",
+  PRICE: "₹199",
   MRP: "₹999",
   IMAGES: {
     LOGO: "",
