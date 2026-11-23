@@ -4,30 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Construction Estimation Master Toolkit | BOQ, BBS, Rate Analysis &amp; Billing</title>
-  <meta name="description" content="Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional. Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.">
+  <meta name="description" content="Estimate like a pro, from BOQ to final bill. Step-by-step video course, practical guides and ready-to-use Excel templates for BOQ, BBS, Rate Analysis &amp; Billing.">
   <meta name="theme-color" content="#0B1B2B">
 
   <!-- Open Graph / Twitter (image + url are filled from config.js) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Construction Estimation Master Toolkit | BOQ, BBS, Rate Analysis &amp; Billing">
-  <meta property="og:description" content="Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional. Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.">
+  <meta property="og:description" content="Estimate like a pro, from BOQ to final bill. Step-by-step video course, practical guides and ready-to-use Excel templates for BOQ, BBS, Rate Analysis &amp; Billing.">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Construction Estimation Master Toolkit | BOQ, BBS, Rate Analysis &amp; Billing">
-  <meta name="twitter:description" content="Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional. Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.">
+  <meta name="twitter:description" content="Estimate like a pro, from BOQ to final bill. Step-by-step video course, practical guides and ready-to-use Excel templates for BOQ, BBS, Rate Analysis &amp; Billing.">
   <meta name="twitter:image" content="">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700;800&amp;display=swap">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <!-- fonts load without blocking the first paint -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700;800&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700;800&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="styles.css?v=4">
 
   <script>document.documentElement.classList.add('js');</script>
   <script src="config.js"></script>
-  <script src="script.js?v=3" defer></script>
+  <script>
+    /* start downloading the hero image immediately (path comes from config.js) */
+    (function (c) {
+      var img = c && c.IMAGES && c.IMAGES.HERO_MOCKUP, set = c && c.RESPONSIVE_IMAGES && c.RESPONSIVE_IMAGES.HERO_MOCKUP;
+      if (!img || !String(img).trim()) return;
+      var l = document.createElement('link');
+      l.rel = 'preload'; l.as = 'image'; l.href = img; l.setAttribute('fetchpriority', 'high');
+      if (set && set.indexOf(img) !== -1) { l.setAttribute('imagesrcset', set); l.setAttribute('imagesizes', '(min-width: 1024px) 600px, (min-width: 800px) 760px, calc(100vw - 40px)'); }
+      document.head.appendChild(l);
+    })(window.SITE_CONFIG);
+  </script>
+  <script src="script.js?v=4" defer></script>
 </head>
 <body>
 
@@ -70,38 +84,42 @@
   <!-- [C] HERO -->
   <section class="hero blueprint" aria-labelledby="hero-title">
     <div class="container hero-grid">
-      <div class="hero-media">
-        <div class="glow" aria-hidden="true"></div>
-        <div class="media media--16x9 hero-img" data-slot="HERO_MOCKUP" data-w="1600" data-h="900" data-eager
-             data-alt="Construction Estimation Master Toolkit — BOQ, BBS, rate analysis and billing resources shown on laptop and mobile"></div>
+      <div class="hero-head">
+        <p class="eyebrow">For Civil Engineers, Students &amp; Contractors</p>
+        <h1 id="hero-title">Estimate Like a Pro<span class="sr-only"> — </span> <span class="hl">From BOQ to Final Bill</span></h1>
+        <p class="hero-sub">Step-by-step video course, practical guides and ready-to-use Excel templates for <strong>BOQ, BBS, Rate Analysis &amp; Billing</strong>, all in one toolkit.</p>
       </div>
 
-      <div class="hero-copy">
-        <p class="eyebrow">For Civil Engineers, Site Engineers &amp; Contractors</p>
-        <h1 id="hero-title">Construction Estimation Master Toolkit</h1>
-        <p class="hero-sub">Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional</p>
-        <p class="hero-support">Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.</p>
+      <div class="hero-media">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="media media--16x9 hero-img" data-slot="HERO_MOCKUP" data-w="1280" data-h="720" data-eager
+             data-sizes="(min-width: 1024px) 600px, (min-width: 800px) 760px, calc(100vw - 40px)"
+             data-alt="Construction Estimation Master Toolkit: BOQ, BBS, rate analysis and billing resources shown on laptop, tablet and mobile"></div>
+      </div>
 
-        <div class="price-block">
-          <div class="price-row">
-            <s class="mrp"><span class="sr-only">Regular price </span><span data-mrp></span></s>
-            <span class="price"><span class="sr-only">Now </span><span data-price></span></span>
-          </div>
-          <p class="price-note">One-time payment • No monthly charges</p>
+      <div class="hero-offer">
+        <div class="offer-price">
+          <s class="mrp"><span class="sr-only">Regular price </span><span data-mrp></span></s>
+          <span class="price"><span class="sr-only">Now </span><span data-price></span></span>
+          <span class="save-chip" data-discount></span>
         </div>
-
+        <p class="price-note">One-time payment • Lifetime access</p>
         <a class="btn btn--primary btn--shine js-buy" id="hero-cta" href="#">
           <span>Get Instant Access — <span data-price></span></span>
           <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
         </a>
-
-        <ul class="badges" aria-label="Toolkit highlights">
-          <li><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Instant Download</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-infinity"/></svg>Lifetime Access</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-devices"/></svg>Mobile &amp; Laptop Friendly</li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-sprout"/></svg>Beginner-Friendly</li>
+        <ul class="trust-row" aria-label="Access details">
+          <li><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Instant download</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-devices"/></svg>Mobile &amp; laptop</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-sprout"/></svg>Beginner-friendly</li>
         </ul>
       </div>
+
+      <ul class="hero-points" aria-label="Highlights">
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Step-by-step BOQ video course with a practical building project example</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Ready-to-use Excel sheets for BOQ, Rate Analysis, BBS &amp; Billing</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Rate analysis and BBS explained with worked examples</li>
+      </ul>
     </div>
   </section>
 
@@ -151,7 +169,7 @@
 
       <div class="modules">
         <article class="card module reveal">
-          <div class="media media--module module-media" data-slot="BOQ_COURSE" data-w="1000" data-h="923" data-alt="Step-by-Step BOQ Preparation Video Course preview"></div>
+          <div class="media media--module module-media" data-slot="BOQ_COURSE" data-w="1200" data-h="1110" data-sizes="(min-width: 900px) 570px, calc(100vw - 40px)" data-alt="Step-by-Step BOQ Preparation Video Course preview"></div>
           <div class="module-body">
             <p class="label">Module 01</p>
             <h3>Step-by-Step BOQ Preparation Video Course</h3>
@@ -166,7 +184,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--module module-media" data-slot="QS_GUIDE" data-w="1000" data-h="923" data-alt="Complete Quantity Surveying Guide PDF preview"></div>
+          <div class="media media--module module-media" data-slot="QS_GUIDE" data-w="1200" data-h="1110" data-sizes="(min-width: 900px) 570px, calc(100vw - 40px)" data-alt="Complete Quantity Surveying Guide PDF preview"></div>
           <div class="module-body">
             <p class="label">Module 02</p>
             <h3>Complete Quantity Surveying Guide</h3>
@@ -181,7 +199,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--module module-media" data-slot="BILLING" data-w="1000" data-h="923" data-alt="Estimation and Billing Methods module preview"></div>
+          <div class="media media--module module-media" data-slot="BILLING" data-w="1200" data-h="1110" data-sizes="(min-width: 900px) 570px, calc(100vw - 40px)" data-alt="Estimation and Billing Methods module preview"></div>
           <div class="module-body">
             <p class="label">Module 03</p>
             <h3>Estimation &amp; Billing Methods</h3>
@@ -197,7 +215,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--module module-media" data-slot="RATE_ANALYSIS" data-w="1000" data-h="923" data-alt="Rate Analysis With Real Calculations module preview"></div>
+          <div class="media media--module module-media" data-slot="RATE_ANALYSIS" data-w="1200" data-h="1110" data-sizes="(min-width: 900px) 570px, calc(100vw - 40px)" data-alt="Rate Analysis With Real Calculations module preview"></div>
           <div class="module-body">
             <p class="label">Module 04</p>
             <h3>Rate Analysis With Real Calculations</h3>
@@ -213,7 +231,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--module module-media" data-slot="BBS" data-w="1000" data-h="923" data-alt="Bar Bending Schedule (BBS) formats preview"></div>
+          <div class="media media--module module-media" data-slot="BBS" data-w="1200" data-h="1110" data-sizes="(min-width: 900px) 570px, calc(100vw - 40px)" data-alt="Bar Bending Schedule (BBS) formats preview"></div>
           <div class="module-body">
             <p class="label">Module 05</p>
             <h3>Bar Bending Schedule (BBS) Formats</h3>
@@ -229,7 +247,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--module module-media" data-slot="EXCEL_SHEETS" data-w="1000" data-h="923" data-alt="Ready-to-use Excel sheets for BOQ, rate analysis, BBS and billing"></div>
+          <div class="media media--module module-media" data-slot="EXCEL_SHEETS" data-w="1200" data-h="1110" data-sizes="(min-width: 900px) 570px, calc(100vw - 40px)" data-alt="Ready-to-use Excel sheets for BOQ, rate analysis, BBS and billing"></div>
           <div class="module-body">
             <p class="label">Module 06</p>
             <h3>Ready-to-Use Excel Sheets</h3>
@@ -243,6 +261,13 @@
             </ul>
           </div>
         </article>
+      </div>
+      <div class="cta-wrap cta-wrap--stack reveal">
+        <a class="btn btn--primary js-buy" href="#">
+          <span>Get All 6 Modules — <span data-price></span></span>
+          <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+        <p class="cta-note">Bonus resources included • One-time payment</p>
       </div>
     </div>
   </section>
@@ -386,6 +411,7 @@
       <div class="price-row price-row--center">
         <s class="mrp"><span class="sr-only">Regular price </span><span data-mrp></span></s>
         <span class="price price--xl"><span class="sr-only">Now </span><span data-price></span></span>
+        <span class="save-chip" data-discount></span>
       </div>
       <a class="btn btn--primary btn--lg js-buy" href="#">
         <span>Get Instant Access — <span data-price></span></span>
@@ -417,8 +443,16 @@
           <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>After payment, you get instant digital access to the toolkit.</p></div></div>
         </div>
         <div class="faq-item">
+          <h3><button class="faq-q" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">Can I use it on mobile?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>Yes. You can use the toolkit on mobile or laptop, anytime.</p></div></div>
+        </div>
+        <div class="faq-item">
           <h3><button class="faq-q" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">Is it a subscription?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
           <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>No. It is a one-time payment with lifetime access and no monthly charges.</p></div></div>
+        </div>
+        <div class="faq-item" data-requires="CONTACT_EMAIL">
+          <h3><button class="faq-q" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">What if I don't receive access after payment?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p>First check your spam folder. If you still can't find it, email us at <a data-mailto="CONTACT_EMAIL" href="#"><span data-config="CONTACT_EMAIL"></span></a> with your payment details and we'll help you get access.</p></div></div>
         </div>
       </div>
     </div>

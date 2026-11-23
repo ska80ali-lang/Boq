@@ -22,14 +22,28 @@ window.SITE_CONFIG = {
   MRP: "₹999",
   IMAGES: {
     LOGO: "",
-    HERO_MOCKUP: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--11_12_39-AM-2026-24-08-05-42-52.png",   // 16:9 banner
-    BOQ_COURSE: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--09_23_25-AM-2026-24-08-04-55-36.png",
-    QS_GUIDE: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--09_23_46-AM-2026-24-08-04-56-52.png",
-    BILLING: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--09_23_10-AM-2026-24-08-04-57-27.png",
-    RATE_ANALYSIS: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--09_22_40-AM-2026-24-08-05-24-12.png",
-    BBS: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--09_22_44-AM-2026-24-08-05-25-25.png",
-    EXCEL_SHEETS: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--09_23_05-AM-2026-24-08-05-25-48.png",
-    OG_IMAGE: "https://media-cdn.cosmofeed.com/chat/ChatGPT-Image-Aug-24--2026--11_12_39-AM-2026-24-08-05-42-52.png",
+    HERO_MOCKUP: "images/hero-1280.webp",          // 16:9 banner
+    BOQ_COURSE: "images/boq-course-1200.webp",
+    QS_GUIDE: "images/qs-guide-1200.webp",
+    BILLING: "images/billing-1200.webp",
+    RATE_ANALYSIS: "images/rate-analysis-1200.webp",
+    BBS: "images/bbs-1200.webp",
+    EXCEL_SHEETS: "images/excel-sheets-1200.webp",
+    OG_IMAGE: "images/og-image.jpg",
     FAVICON: ""
+  },
+  /*
+   * Optional: smaller copies of the same image so phones download less.
+   * If you paste a NEW link in IMAGES above, these are ignored automatically
+   * for that slot (you can also delete its line here).
+   */
+  RESPONSIVE_IMAGES: {
+    HERO_MOCKUP: "images/hero-640.webp 640w, images/hero-960.webp 960w, images/hero-1280.webp 1280w",
+    BOQ_COURSE: "images/boq-course-480.webp 480w, images/boq-course-800.webp 800w, images/boq-course-1200.webp 1200w",
+    QS_GUIDE: "images/qs-guide-480.webp 480w, images/qs-guide-800.webp 800w, images/qs-guide-1200.webp 1200w",
+    BILLING: "images/billing-480.webp 480w, images/billing-800.webp 800w, images/billing-1200.webp 1200w",
+    RATE_ANALYSIS: "images/rate-analysis-480.webp 480w, images/rate-analysis-800.webp 800w, images/rate-analysis-1200.webp 1200w",
+    BBS: "images/bbs-480.webp 480w, images/bbs-800.webp 800w, images/bbs-1200.webp 1200w",
+    EXCEL_SHEETS: "images/excel-sheets-480.webp 480w, images/excel-sheets-800.webp 800w, images/excel-sheets-1200.webp 1200w"
   }
 };

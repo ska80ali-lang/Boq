@@ -12,6 +12,7 @@
 
   function $$(sel, root) { return Array.prototype.slice.call((root || doc).querySelectorAll(sel)); }
   function filled(v) { return typeof v === 'string' && v.trim() !== ''; }
+  function toNumber(v) { var n = parseFloat(String(v || '').replace(/[^\d.]/g, '')); return isFinite(n) ? n : 0; }
   function val(key) { return filled(C[key]) ? C[key].trim() : ''; }
 
   /* ---------- Price / MRP / text values ---------- */
@@ -23,6 +24,13 @@
 
     // Hide MRP strike-throughs if MRP is empty
     if (!val('MRP')) $$('.mrp').forEach(function (el) { el.hidden = true; });
+
+    // "75% OFF" chip, calculated from PRICE and MRP
+    var p = toNumber(C.PRICE), m = toNumber(C.MRP);
+    var off = p > 0 && m > p ? Math.round((1 - p / m) * 100) : 0;
+    $$('[data-discount]').forEach(function (el) {
+      if (off > 0) el.textContent = off + '% OFF'; else el.hidden = true;
+    });
   }
 
   /* ---------- Hide elements whose config value is empty ---------- */
@@ -98,6 +106,12 @@
       img.decoding = 'async';
       img.loading = eager ? 'eager' : 'lazy';
       if (slot === 'HERO_MOCKUP') img.setAttribute('fetchpriority', 'high');
+      // optional smaller versions for phones (only used if they belong to the same image)
+      var set = (C.RESPONSIVE_IMAGES || {})[slot];
+      if (filled(set) && set.indexOf(src) !== -1) {
+        img.sizes = box.getAttribute('data-sizes') || '100vw';
+        img.srcset = set.trim();
+      }
       var w = box.getAttribute('data-w'), h = box.getAttribute('data-h');
       if (w && h) { img.width = +w; img.height = +h; }
       else if (slot === 'LOGO') { img.width = 80; img.height = 80; }
@@ -150,8 +164,7 @@
 
   /* ---------- Meta Pixel ---------- */
   function priceValue() {
-    var n = parseFloat(String(C.PRICE || '').replace(/[^\d.]/g, ''));
-    return isFinite(n) && n > 0 ? n : 249;
+    return toNumber(C.PRICE) || 249;
   }
 
   function loadPixel() {

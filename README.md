@@ -22,12 +22,14 @@ Paste an image URL and the image appears automatically in that slot — no other
 
 ## 2. Images
 
-Images load from the links in `config.js`. To change one, paste the new full `https://` link into its slot. Nothing else needs to change.
+The product images are in `/images` as compressed WebP files, each in three widths. Phones automatically download a smaller copy (about 0.6 MB for the whole page, instead of 14.5 MB for the original PNGs). `config.js` → `IMAGES` holds the main file for each slot, and `RESPONSIVE_IMAGES` lists the smaller copies.
+
+To change an image, paste a new full `https://` link (or a new file path) into its `IMAGES` slot. The old smaller copies are then ignored automatically for that slot.
 
 | Slot | Recommended size | Ratio |
 |---|---|---|
-| `HERO_MOCKUP` | 1600 × 900 | 16:9 (wide banner) |
-| `BOQ_COURSE`, `QS_GUIDE`, `BILLING`, `RATE_ANALYSIS`, `BBS`, `EXCEL_SHEETS` | 1000 × 923 (about 1080 × 1000) | 13:12, close to square |
+| `HERO_MOCKUP` | 1280 × 720 or larger | 16:9 (wide banner) |
+| `BOQ_COURSE`, `QS_GUIDE`, `BILLING`, `RATE_ANALYSIS`, `BBS`, `EXCEL_SHEETS` | 1200 × 1110 (about 1080 × 1000) | 13:12, close to square |
 | `OG_IMAGE` | 1200 × 630 | 1.91:1 |
 | `LOGO` | 512 × 512 | square |
 | `FAVICON` | 512 × 512 PNG (or .ico / .svg) | square |
