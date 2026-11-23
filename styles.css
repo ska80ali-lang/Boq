@@ -334,6 +334,19 @@ h1, h2, h3 {
   font: 800 .8125rem/1 var(--font-head);
   letter-spacing: .02em;
 }
+.offer-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #FF9A2E, #F07A0C);
+  color: var(--navy);
+  font: 700 .75rem/1.2 var(--font-head);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.final .offer-label { margin: 26px 0 0; }
+.final .price-row--center { margin-top: 14px; }
 .price-note { margin: 8px 0 14px; font-size: .875rem; color: var(--on-navy-muted); }
 .hero-offer .btn { width: 100%; min-width: 0; }
 .trust-row {

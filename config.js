@@ -22,14 +22,14 @@ window.SITE_CONFIG = {
   MRP: "₹999",
   IMAGES: {
     LOGO: "",
-    HERO_MOCKUP: "images/hero-1280.webp",          // 16:9 banner
+    HERO_MOCKUP: "images/hero-v2-1280.webp",          // 16:9 banner
     BOQ_COURSE: "images/boq-course-1200.webp",
     QS_GUIDE: "images/qs-guide-1200.webp",
     BILLING: "images/billing-1200.webp",
     RATE_ANALYSIS: "images/rate-analysis-1200.webp",
     BBS: "images/bbs-1200.webp",
     EXCEL_SHEETS: "images/excel-sheets-1200.webp",
-    OG_IMAGE: "images/og-image.jpg",
+    OG_IMAGE: "images/og-image-v2.jpg",
     FAVICON: ""
   },
   /*
@@ -38,7 +38,7 @@ window.SITE_CONFIG = {
    * for that slot (you can also delete its line here).
    */
   RESPONSIVE_IMAGES: {
-    HERO_MOCKUP: "images/hero-640.webp 640w, images/hero-960.webp 960w, images/hero-1280.webp 1280w",
+    HERO_MOCKUP: "images/hero-v2-640.webp 640w, images/hero-v2-960.webp 960w, images/hero-v2-1280.webp 1280w",
     BOQ_COURSE: "images/boq-course-480.webp 480w, images/boq-course-800.webp 800w, images/boq-course-1200.webp 1200w",
     QS_GUIDE: "images/qs-guide-480.webp 480w, images/qs-guide-800.webp 800w, images/qs-guide-1200.webp 1200w",
     BILLING: "images/billing-480.webp 480w, images/billing-800.webp 800w, images/billing-1200.webp 1200w",
