@@ -50,8 +50,12 @@
       var v = val(a.getAttribute('data-link'));
       if (v) {
         a.href = v;
-        a.target = '_blank';
-        a.rel = 'noopener';
+        // external policy pages open in a new tab; pages on this site open normally
+        if (/^https?:\/\//i.test(v) && a.host !== location.host) {
+          a.target = '_blank';
+          a.rel = 'noopener';
+        }
+        if (location.pathname.replace(/\.html$/, '') === v.replace(/\.html$/, '')) a.setAttribute('aria-current', 'page');
       }
     });
   }
@@ -82,6 +86,8 @@
       box.innerHTML = '';
 
       if (!src) {
+        // optional slots (e.g. footer logo) simply disappear when empty
+        if (box.hasAttribute('data-optional')) { box.hidden = true; return; }
         box.appendChild(placeholder(slot));
         return;
       }
@@ -118,6 +124,8 @@
       doc.head.appendChild(apple);
     }
     var og = IMAGES.OG_IMAGE;
+    // social crawlers need an absolute URL
+    if (filled(og)) { try { og = new URL(og.trim(), location.href).href; } catch (err) { /* keep as-is */ } }
     // Fill from config; if config is empty, keep any value hardcoded in HTML, else drop the empty tag.
     var setMeta = function (sel, content) {
       var m = doc.querySelector(sel);

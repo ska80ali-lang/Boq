@@ -23,11 +23,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700;800&amp;display=swap">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 
   <script>document.documentElement.classList.add('js');</script>
   <script src="config.js"></script>
-  <script src="script.js?v=2" defer></script>
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
 
@@ -72,7 +72,7 @@
     <div class="container hero-grid">
       <div class="hero-media">
         <div class="glow" aria-hidden="true"></div>
-        <div class="media media--4x5 hero-img" data-slot="HERO_MOCKUP" data-w="1080" data-h="1350" data-eager
+        <div class="media media--16x9 hero-img" data-slot="HERO_MOCKUP" data-w="1600" data-h="900" data-eager
              data-alt="Construction Estimation Master Toolkit — BOQ, BBS, rate analysis and billing resources shown on laptop and mobile"></div>
       </div>
 
@@ -151,7 +151,7 @@
 
       <div class="modules">
         <article class="card module reveal">
-          <div class="media media--1x1 module-media" data-slot="BOQ_COURSE" data-w="1080" data-h="1080" data-alt="Step-by-Step BOQ Preparation Video Course preview"></div>
+          <div class="media media--module module-media" data-slot="BOQ_COURSE" data-w="1000" data-h="923" data-alt="Step-by-Step BOQ Preparation Video Course preview"></div>
           <div class="module-body">
             <p class="label">Module 01</p>
             <h3>Step-by-Step BOQ Preparation Video Course</h3>
@@ -166,7 +166,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--1x1 module-media" data-slot="QS_GUIDE" data-w="1080" data-h="1080" data-alt="Complete Quantity Surveying Guide PDF preview"></div>
+          <div class="media media--module module-media" data-slot="QS_GUIDE" data-w="1000" data-h="923" data-alt="Complete Quantity Surveying Guide PDF preview"></div>
           <div class="module-body">
             <p class="label">Module 02</p>
             <h3>Complete Quantity Surveying Guide</h3>
@@ -181,7 +181,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--1x1 module-media" data-slot="BILLING" data-w="1080" data-h="1080" data-alt="Estimation and Billing Methods module preview"></div>
+          <div class="media media--module module-media" data-slot="BILLING" data-w="1000" data-h="923" data-alt="Estimation and Billing Methods module preview"></div>
           <div class="module-body">
             <p class="label">Module 03</p>
             <h3>Estimation &amp; Billing Methods</h3>
@@ -197,7 +197,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--1x1 module-media" data-slot="RATE_ANALYSIS" data-w="1080" data-h="1080" data-alt="Rate Analysis With Real Calculations module preview"></div>
+          <div class="media media--module module-media" data-slot="RATE_ANALYSIS" data-w="1000" data-h="923" data-alt="Rate Analysis With Real Calculations module preview"></div>
           <div class="module-body">
             <p class="label">Module 04</p>
             <h3>Rate Analysis With Real Calculations</h3>
@@ -213,7 +213,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--1x1 module-media" data-slot="BBS" data-w="1080" data-h="1080" data-alt="Bar Bending Schedule (BBS) formats preview"></div>
+          <div class="media media--module module-media" data-slot="BBS" data-w="1000" data-h="923" data-alt="Bar Bending Schedule (BBS) formats preview"></div>
           <div class="module-body">
             <p class="label">Module 05</p>
             <h3>Bar Bending Schedule (BBS) Formats</h3>
@@ -229,7 +229,7 @@
         </article>
 
         <article class="card module reveal">
-          <div class="media media--1x1 module-media" data-slot="EXCEL_SHEETS" data-w="1080" data-h="1080" data-alt="Ready-to-use Excel sheets for BOQ, rate analysis, BBS and billing"></div>
+          <div class="media media--module module-media" data-slot="EXCEL_SHEETS" data-w="1000" data-h="923" data-alt="Ready-to-use Excel sheets for BOQ, rate analysis, BBS and billing"></div>
           <div class="module-body">
             <p class="label">Module 06</p>
             <h3>Ready-to-Use Excel Sheets</h3>
@@ -429,18 +429,21 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <span class="brand-logo media media--logo" data-slot="LOGO" data-alt="Logo"></span>
+      <span class="brand-logo media media--logo" data-slot="LOGO" data-alt="Logo" data-optional></span>
       <span class="brand-name" data-config="BRAND_NAME" data-requires="BRAND_NAME"></span>
     </div>
     <ul class="footer-contact" data-requires-any="CONTACT_EMAIL CONTACT_PHONE">
       <li data-requires="CONTACT_EMAIL"><a data-mailto="CONTACT_EMAIL" href="#"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span data-config="CONTACT_EMAIL"></span></a></li>
       <li data-requires="CONTACT_PHONE"><a data-tel="CONTACT_PHONE" href="#"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span data-config="CONTACT_PHONE"></span></a></li>
     </ul>
-    <nav aria-label="Policies" data-requires-any="TERMS_LINK REFUND_LINK PRIVACY_LINK">
+    <nav aria-label="Policies" data-requires-any="TERMS_LINK REFUND_LINK PRIVACY_LINK DELIVERY_LINK DISCLAIMER_LINK CONTACT_LINK">
       <ul class="footer-links">
-        <li data-requires="TERMS_LINK"><a data-link="TERMS_LINK" href="#">Terms</a></li>
-        <li data-requires="REFUND_LINK"><a data-link="REFUND_LINK" href="#">Refund</a></li>
-        <li data-requires="PRIVACY_LINK"><a data-link="PRIVACY_LINK" href="#">Privacy</a></li>
+        <li data-requires="TERMS_LINK"><a data-link="TERMS_LINK" href="#">Terms &amp; Conditions</a></li>
+        <li data-requires="REFUND_LINK"><a data-link="REFUND_LINK" href="#">Refund Policy</a></li>
+        <li data-requires="PRIVACY_LINK"><a data-link="PRIVACY_LINK" href="#">Privacy Policy</a></li>
+        <li data-requires="DELIVERY_LINK"><a data-link="DELIVERY_LINK" href="#">Delivery Policy</a></li>
+        <li data-requires="DISCLAIMER_LINK"><a data-link="DISCLAIMER_LINK" href="#">Disclaimer</a></li>
+        <li data-requires="CONTACT_LINK"><a data-link="CONTACT_LINK" href="#">Contact</a></li>
       </ul>
     </nav>
     <p class="copyright">© <span data-year></span><span data-requires="BRAND_NAME"> <span data-config="BRAND_NAME"></span></span>. All rights reserved.</p>
