@@ -267,14 +267,49 @@
     });
   }
 
-  /* ---------- Topic strip keyboard scroll ---------- */
+  /* ---------- Topic strip: endless auto-scrolling loop ---------- */
   function initTopics() {
-    var t = doc.querySelector('.topics');
-    if (!t) return;
-    t.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { t.scrollBy({ left: 120, behavior: reduceMotion ? 'auto' : 'smooth' }); e.preventDefault(); }
-      if (e.key === 'ArrowLeft') { t.scrollBy({ left: -120, behavior: reduceMotion ? 'auto' : 'smooth' }); e.preventDefault(); }
+    var wrap = doc.querySelector('.topics-marquee');
+    var list = wrap && wrap.querySelector('.topics');
+    if (!list || reduceMotion) return;
+
+    var originals = $$(':scope > li', list);
+    var SPEED = 45; // px per second
+
+    function build() {
+      // reset to the original items
+      $$(':scope > li[data-clone]', list).forEach(function (li) { list.removeChild(li); });
+      list.classList.remove('is-looping');
+
+      var groupWidth = list.scrollWidth; // width of one full set (margins included)
+      if (!groupWidth) return;
+      // enough copies to cover the strip twice, so the loop never shows a gap
+      var copies = Math.ceil((wrap.clientWidth * 2) / groupWidth);
+      for (var c = 0; c < copies; c++) {
+        originals.forEach(function (li) {
+          var clone = li.cloneNode(true);
+          clone.setAttribute('data-clone', '');
+          clone.setAttribute('aria-hidden', 'true');
+          list.appendChild(clone);
+        });
+      }
+      list.style.setProperty('--loop-distance', groupWidth + 'px');
+      list.style.setProperty('--loop-duration', (groupWidth / SPEED) + 's');
+      list.classList.add('is-looping');
+    }
+
+    // pause while a finger is on the strip (mobile)
+    wrap.addEventListener('touchstart', function () { wrap.classList.add('is-paused'); }, { passive: true });
+    wrap.addEventListener('touchend', function () { wrap.classList.remove('is-paused'); });
+    wrap.addEventListener('touchcancel', function () { wrap.classList.remove('is-paused'); });
+
+    var lastW = wrap.clientWidth, t;
+    window.addEventListener('resize', function () {
+      clearTimeout(t);
+      t = setTimeout(function () { if (wrap.clientWidth !== lastW) { lastW = wrap.clientWidth; build(); } }, 200);
     });
+
+    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(build); else build();
   }
 
   /* ---------- Init ---------- */
