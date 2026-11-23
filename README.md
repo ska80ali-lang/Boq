@@ -22,9 +22,7 @@ Paste an image URL and the image appears automatically in that slot — no other
 
 ## 2. Images
 
-The product images live in `/images` as compressed WebP files (about 1 MB total, instead of about 14.5 MB for the original PNG uploads). `config.js` points to them, and lists the original upload links in a comment at the top.
-
-To change an image, either replace the file in `/images` (same name) or paste any full `https://` image link into `config.js`.
+Images load from the links in `config.js`. To change one, paste the new full `https://` link into its slot. Nothing else needs to change.
 
 | Slot | Recommended size | Ratio |
 |---|---|---|
@@ -34,7 +32,7 @@ To change an image, either replace the file in `/images` (same name) or paste an
 | `LOGO` | 512 × 512 | square |
 | `FAVICON` | 512 × 512 PNG (or .ico / .svg) | square |
 
-Images with a different ratio are cropped to fill their frame. Keep each file under about 200 KB (WebP or compressed JPG) for good mobile speed.
+Images with a different ratio are cropped to fill their frame.
 
 ## 3. Policy pages
 
@@ -56,7 +54,7 @@ Or with the CLI: `npm i -g vercel` then run `vercel --prod` in this folder.
 - `styles.css` and `script.js` are cached for a year. If you edit either file, bump the version in `index.html` (`styles.css?v=1` → `?v=2`, `script.js?v=1` → `?v=2`) so visitors get the new file.
 
 ### Social previews
-Facebook/WhatsApp/LinkedIn crawlers don't run JavaScript. Once your domain is live, paste the full image URL (for example `https://your-domain.com/images/og-image.jpg`) into the empty `content=""` of the `og:image` and `twitter:image` meta tags in `index.html` so link previews show the image.
+Facebook/WhatsApp/LinkedIn crawlers don't run JavaScript. Paste your `OG_IMAGE` link into the empty `content=""` of the `og:image` and `twitter:image` meta tags in `index.html` so link previews show the image.
 
 ## Local preview
 Run `npx serve .` in this folder and open the address it prints. (Opening `index.html` directly also works for the main page, but the footer policy links need a server.)
