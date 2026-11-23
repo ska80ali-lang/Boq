@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Construction Estimation Master Toolkit | BOQ, BBS, Rate Analysis &amp; Billing</title>
+  <meta name="description" content="Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional. Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.">
+  <meta name="theme-color" content="#0B1B2B">
+
+  <!-- Open Graph / Twitter (image + url are filled from config.js) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Construction Estimation Master Toolkit | BOQ, BBS, Rate Analysis &amp; Billing">
+  <meta property="og:description" content="Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional. Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Construction Estimation Master Toolkit | BOQ, BBS, Rate Analysis &amp; Billing">
+  <meta name="twitter:description" content="Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional. Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.">
+  <meta name="twitter:image" content="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="styles.css?v=1">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="config.js"></script>
+  <script src="script.js?v=1" defer></script>
+</head>
+<body>
+
+<!-- ============ ICON SPRITE (inline SVG) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.3l2.7 2.7L16 9.7"/></symbol>
+    <symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 3.5L2.5 20h19L12 3.5z"/><path d="M12 10v4.5M12 17.5v.01"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
+    <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4z"/></symbol>
+    <symbol id="i-devices" viewBox="0 0 24 24"><rect x="2.5" y="4" width="13" height="10" rx="1.5"/><path d="M1 18h12"/><rect x="16" y="9" width="6.5" height="11" rx="1.5"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4 3-6.5 8-6.5 0 4-3 6.5-8 6.5z"/><path d="M12 14.5c0-3-2.5-5.5-7-5.5 0 3 2.5 5.5 7 5.5z"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12"/><path d="M12 8C10.5 5 7 4 7 6.5S10 8 12 8zM12 8c1.5-3 5-4 5-1.5S14 8 12 8z"/></symbol>
+    <symbol id="i-hardhat" viewBox="0 0 24 24"><path d="M2.5 17.5h19v2h-19z"/><path d="M5 17.5V14a7 7 0 0 1 14 0v3.5"/><path d="M10 7.3V11M14 7.3V11"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M8.5 6.5h7v3h-7zM8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01M8.5 17.5h.01M12 17.5h.01M15.5 17.5h.01"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v5"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2.5L4 14h7l-1 7.5 9-11.5h-7l1-7.5z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h14v-4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2"/><path d="M11 18h2"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- [A] TOP STRIP -->
+<div class="topstrip" role="note">
+  <span>Instant Download</span><span class="dot" aria-hidden="true"></span><span>Lifetime Access</span><span class="dot" aria-hidden="true"></span><span>One-time Payment</span>
+</div>
+
+<!-- [B] HEADER -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-logo media media--logo" data-slot="LOGO" data-alt="Logo" data-eager></span>
+      <span class="brand-name" data-config="BRAND_NAME" data-requires="BRAND_NAME"></span>
+    </a>
+    <a class="btn btn--primary btn--sm js-buy header-cta" href="#">
+      <span>Get the Toolkit</span>
+      <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- [C] HERO -->
+  <section class="hero blueprint" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-media">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="media media--4x5 hero-img" data-slot="HERO_MOCKUP" data-w="1080" data-h="1350" data-eager
+             data-alt="Construction Estimation Master Toolkit — BOQ, BBS, rate analysis and billing resources shown on laptop and mobile"></div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">For Civil Engineers, Site Engineers &amp; Contractors</p>
+        <h1 id="hero-title">Construction Estimation Master Toolkit</h1>
+        <p class="hero-sub">Master BOQ, BBS, Rate Analysis &amp; Billing Like a Professional</p>
+        <p class="hero-support">Stop Guessing. Stop Rebuilding Excel Sheets. Start Estimating Smarter.</p>
+
+        <div class="price-block">
+          <div class="price-row">
+            <s class="mrp"><span class="sr-only">Regular price </span><span data-mrp></span></s>
+            <span class="price"><span class="sr-only">Now </span><span data-price></span></span>
+          </div>
+          <p class="price-note">One-time payment • No monthly charges</p>
+        </div>
+
+        <a class="btn btn--primary btn--shine js-buy" id="hero-cta" href="#">
+          <span>Get Instant Access — <span data-price></span></span>
+          <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+
+        <ul class="badges" aria-label="Toolkit highlights">
+          <li><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Instant Download</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-infinity"/></svg>Lifetime Access</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-devices"/></svg>Mobile &amp; Laptop Friendly</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-sprout"/></svg>Beginner-Friendly</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- [D] TOPIC STRIP -->
+  <div class="topics-band">
+    <div class="container">
+      <ul class="topics" tabindex="0" aria-label="Topics covered">
+        <li>BOQ</li>
+        <li>BBS</li>
+        <li>Quantity Estimation</li>
+        <li>Rate Analysis</li>
+        <li>Billing</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- [E] PROBLEM -->
+  <section class="section bg-off" aria-labelledby="problem-title">
+    <div class="container">
+      <h2 id="problem-title" class="section-title reveal">Struggling With Any of These?</h2>
+      <ul class="problem-grid">
+        <li class="card problem-card reveal"><span class="icon-chip icon-chip--warn"><svg class="i" aria-hidden="true"><use href="#i-warning"/></svg></span>BOQ Preparation</li>
+        <li class="card problem-card reveal"><span class="icon-chip icon-chip--warn"><svg class="i" aria-hidden="true"><use href="#i-warning"/></svg></span>Quantity Estimation</li>
+        <li class="card problem-card reveal"><span class="icon-chip icon-chip--warn"><svg class="i" aria-hidden="true"><use href="#i-warning"/></svg></span>BBS Calculations</li>
+        <li class="card problem-card reveal"><span class="icon-chip icon-chip--warn"><svg class="i" aria-hidden="true"><use href="#i-warning"/></svg></span>Rate Analysis</li>
+        <li class="card problem-card reveal"><span class="icon-chip icon-chip--warn"><svg class="i" aria-hidden="true"><use href="#i-warning"/></svg></span>RA Billing</li>
+        <li class="card problem-card reveal"><span class="icon-chip icon-chip--warn"><svg class="i" aria-hidden="true"><use href="#i-warning"/></svg></span>Excel Formats</li>
+        <li class="card problem-card reveal"><span class="icon-chip icon-chip--warn"><svg class="i" aria-hidden="true"><use href="#i-warning"/></svg></span>Real Site Workflow</li>
+      </ul>
+      <p class="lead center reveal">Whether you're a Civil Engineering Student, Site Engineer, Contractor, or Estimation Engineer, this toolkit gives you practical resources to handle construction estimation work with greater speed, accuracy, and confidence.</p>
+      <div class="cta-wrap reveal">
+        <a class="btn btn--primary js-buy" href="#">
+          <span>Get the Toolkit — <span data-price></span></span>
+          <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- [F] WHAT'S INSIDE -->
+  <section class="section bg-white" id="inside" aria-labelledby="inside-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2 id="inside-title" class="section-title">What You'll Get Inside</h2>
+        <p class="section-sub">Everything you need, from quantity take-off to billing.</p>
+      </header>
+
+      <div class="modules">
+        <article class="card module reveal">
+          <div class="media media--1x1 module-media" data-slot="BOQ_COURSE" data-w="1080" data-h="1080" data-alt="Step-by-Step BOQ Preparation Video Course preview"></div>
+          <div class="module-body">
+            <p class="label">Module 01</p>
+            <h3>Step-by-Step BOQ Preparation Video Course</h3>
+            <p class="module-desc">Learn how to prepare BOQs from start to finish.</p>
+            <ul class="checklist">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Quantity take-off methods</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>BOQ format &amp; measurement sheets</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Practical building project example</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Common BOQ mistakes</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card module reveal">
+          <div class="media media--1x1 module-media" data-slot="QS_GUIDE" data-w="1080" data-h="1080" data-alt="Complete Quantity Surveying Guide PDF preview"></div>
+          <div class="module-body">
+            <p class="label">Module 02</p>
+            <h3>Complete Quantity Surveying Guide</h3>
+            <p class="module-desc">A practical PDF covering the fundamentals of quantity surveying.</p>
+            <ul class="checklist">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Quantity calculation methods</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Drawing reading basics</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Real site workflow</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Easy-to-follow explanations</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card module reveal">
+          <div class="media media--1x1 module-media" data-slot="BILLING" data-w="1080" data-h="1080" data-alt="Estimation and Billing Methods module preview"></div>
+          <div class="module-body">
+            <p class="label">Module 03</p>
+            <h3>Estimation &amp; Billing Methods</h3>
+            <p class="module-desc">Learn how construction billing works in real projects.</p>
+            <ul class="checklist">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Abstract sheets</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>RA Bill calculations</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Final bill preparation</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Client &amp; contractor billing</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Practical billing formats</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card module reveal">
+          <div class="media media--1x1 module-media" data-slot="RATE_ANALYSIS" data-w="1080" data-h="1080" data-alt="Rate Analysis With Real Calculations module preview"></div>
+          <div class="module-body">
+            <p class="label">Module 04</p>
+            <h3>Rate Analysis With Real Calculations</h3>
+            <p class="module-desc">Understand how project rates are actually calculated.</p>
+            <ul class="checklist">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Material costing</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Labour costing</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Equipment &amp; machinery</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Overhead &amp; profit</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Worked examples</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card module reveal">
+          <div class="media media--1x1 module-media" data-slot="BBS" data-w="1080" data-h="1080" data-alt="Bar Bending Schedule (BBS) formats preview"></div>
+          <div class="module-body">
+            <p class="label">Module 05</p>
+            <h3>Bar Bending Schedule (BBS) Formats</h3>
+            <p class="module-desc">Understand the essentials of BBS preparation.</p>
+            <ul class="checklist">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Steel quantity calculations</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Cutting length</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Shape codes</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>BBS formats</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Slab &amp; footing examples</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card module reveal">
+          <div class="media media--1x1 module-media" data-slot="EXCEL_SHEETS" data-w="1080" data-h="1080" data-alt="Ready-to-use Excel sheets for BOQ, rate analysis, BBS and billing"></div>
+          <div class="module-body">
+            <p class="label">Module 06</p>
+            <h3>Ready-to-Use Excel Sheets</h3>
+            <p class="module-desc">Skip the blank spreadsheet and start with ready-made formats.</p>
+            <ul class="checklist">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>BOQ Template</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Rate Analysis Sheet</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>BBS Calculator</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Billing Format</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Editable Excel Templates</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- [G] BONUS -->
+  <section class="section bonus blueprint" aria-labelledby="bonus-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <h2 id="bonus-title" class="section-title">Bonus Resources <span class="hl">Included</span></h2>
+        <p class="section-sub">Get these additional resources with your toolkit:</p>
+      </header>
+      <ul class="bonus-grid">
+        <li class="bonus-tile reveal"><span class="icon-chip icon-chip--gold"><svg class="i" aria-hidden="true"><use href="#i-gift"/></svg></span>Ready Excel Templates</li>
+        <li class="bonus-tile reveal"><span class="icon-chip icon-chip--gold"><svg class="i" aria-hidden="true"><use href="#i-gift"/></svg></span>Practical BOQ Formats</li>
+        <li class="bonus-tile reveal"><span class="icon-chip icon-chip--gold"><svg class="i" aria-hidden="true"><use href="#i-gift"/></svg></span>Real Project Case Study</li>
+        <li class="bonus-tile reveal"><span class="icon-chip icon-chip--gold"><svg class="i" aria-hidden="true"><use href="#i-gift"/></svg></span>Professional Estimation Resources</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- [H] WHO IS THIS FOR -->
+  <section class="section bg-off" aria-labelledby="who-title">
+    <div class="container">
+      <h2 id="who-title" class="section-title reveal">Who Is This Toolkit For?</h2>
+      <ul class="flex-grid">
+        <li class="card feature reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-hardhat"/></svg></span>
+          <h3>Site Engineers</h3><p>Work with practical estimation formats</p>
+        </li>
+        <li class="card feature reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-calc"/></svg></span>
+          <h3>Estimation Engineers</h3><p>Organize calculations faster</p>
+        </li>
+        <li class="card feature reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+          <h3>Contractors</h3><p>Prepare better project estimates</p>
+        </li>
+        <li class="card feature reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg></span>
+          <h3>Civil Engineering Students</h3><p>Learn practical industry skills</p>
+        </li>
+        <li class="card feature reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span>
+          <h3>Freshers</h3><p>Build job-ready estimation knowledge</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- [I] WHAT CAN YOU DO -->
+  <section class="section bg-white" aria-labelledby="do-title">
+    <div class="container">
+      <h2 id="do-title" class="section-title reveal">What Can You Do With It?</h2>
+      <ul class="grid-2x2">
+        <li class="card feature feature--row reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg></span>
+          <div><h3>Estimate Faster</h3><p>Reduce repetitive manual work.</p></div>
+        </li>
+        <li class="card feature feature--row reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-target"/></svg></span>
+          <div><h3>Work More Accurately</h3><p>Use structured formats and calculation sheets.</p></div>
+        </li>
+        <li class="card feature feature--row reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg></span>
+          <div><h3>Learn Practical Skills</h3><p>Understand how estimation works beyond textbooks.</p></div>
+        </li>
+        <li class="card feature feature--row reveal">
+          <span class="icon-chip"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span>
+          <div><h3>Work With Confidence</h3><p>Follow a clear workflow from quantity take-off to billing.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- [J] WHY THIS TOOLKIT -->
+  <section class="section bg-off" aria-labelledby="why-title">
+    <div class="container narrow">
+      <header class="section-head reveal">
+        <h2 id="why-title" class="section-title">Why This Toolkit?</h2>
+        <p class="section-sub">Not just theory. Practical tools you can actually use.</p>
+      </header>
+      <ul class="why-list card reveal">
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>Beginner-friendly</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>Real project examples</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>Step-by-step guidance</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>Ready Excel templates</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>Practical site workflow</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>Easy-to-understand resources</li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>Time-saving formats</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- [K] HOW YOU GET IT -->
+  <section class="section bg-white" aria-labelledby="how-title">
+    <div class="container">
+      <h2 id="how-title" class="section-title reveal">How You Get It</h2>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">1</span>
+          <div><h3>Complete Your Payment</h3><p>One-time payment, no monthly charges.</p></div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">2</span>
+          <div><h3>Get Instant Access</h3><p>After payment, get your toolkit digitally.</p></div>
+        </li>
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">3</span>
+          <div><h3>Start Estimating</h3><p>Use it on mobile or laptop, anytime.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- [L] LIFETIME ACCESS -->
+  <section class="section bg-off" aria-labelledby="lifetime-title">
+    <div class="container narrow">
+      <div class="lifetime card reveal">
+        <span class="icon-chip icon-chip--lg icon-chip--gold-solid"><svg class="i" aria-hidden="true"><use href="#i-infinity"/></svg></span>
+        <h2 id="lifetime-title" class="section-title">Pay Once. Use It Anytime.</h2>
+        <ul class="lifetime-list">
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>One-time payment</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Instant digital access</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Future updates included</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>No recurring charges</li>
+        </ul>
+        <a class="btn btn--primary js-buy" href="#">
+          <span>Get Instant Access — <span data-price></span></span>
+          <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- [M] FINAL CTA -->
+  <section class="final blueprint" id="final-cta" aria-labelledby="final-title">
+    <div class="glow glow--center" aria-hidden="true"></div>
+    <div class="container narrow final-inner reveal">
+      <h2 id="final-title">Stop Starting From Scratch. <span class="hl">Start Estimating Smarter.</span></h2>
+      <p class="final-line">Master BOQ • BBS • Quantity Estimation • Rate Analysis • Billing</p>
+      <div class="price-row price-row--center">
+        <s class="mrp"><span class="sr-only">Regular price </span><span data-mrp></span></s>
+        <span class="price price--xl"><span class="sr-only">Now </span><span data-price></span></span>
+      </div>
+      <a class="btn btn--primary btn--lg js-buy" href="#">
+        <span>Get Instant Access — <span data-price></span></span>
+        <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+      <p class="final-note">Instant download • Lifetime access • One-time payment</p>
+    </div>
+  </section>
+
+  <!-- [N] FAQ -->
+  <section class="section bg-white" aria-labelledby="faq-title">
+    <div class="container narrow">
+      <h2 id="faq-title" class="section-title reveal">Frequently Asked Questions</h2>
+      <div class="faq reveal">
+        <div class="faq-item">
+          <h3><button class="faq-q" id="faq-q1" aria-expanded="true" aria-controls="faq-a1">Is it beginner-friendly?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>Yes. The toolkit is beginner-friendly, with step-by-step guidance and easy-to-understand resources.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">Do I need advanced Excel skills?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>The toolkit is beginner-friendly and comes with ready-to-use Excel templates, so you don't start from a blank sheet.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">Can I edit the templates?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Yes. The Excel templates are editable.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">How do I receive it?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>After payment, you get instant digital access to the toolkit.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">Is it a subscription?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>No. It is a one-time payment with lifetime access and no monthly charges.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- [O] FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-logo media media--logo" data-slot="LOGO" data-alt="Logo"></span>
+      <span class="brand-name" data-config="BRAND_NAME" data-requires="BRAND_NAME"></span>
+    </div>
+    <ul class="footer-contact" data-requires-any="CONTACT_EMAIL CONTACT_PHONE">
+      <li data-requires="CONTACT_EMAIL"><a data-mailto="CONTACT_EMAIL" href="#"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span data-config="CONTACT_EMAIL"></span></a></li>
+      <li data-requires="CONTACT_PHONE"><a data-tel="CONTACT_PHONE" href="#"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span data-config="CONTACT_PHONE"></span></a></li>
+    </ul>
+    <nav aria-label="Policies" data-requires-any="TERMS_LINK REFUND_LINK PRIVACY_LINK">
+      <ul class="footer-links">
+        <li data-requires="TERMS_LINK"><a data-link="TERMS_LINK" href="#">Terms</a></li>
+        <li data-requires="REFUND_LINK"><a data-link="REFUND_LINK" href="#">Refund</a></li>
+        <li data-requires="PRIVACY_LINK"><a data-link="PRIVACY_LINK" href="#">Privacy</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">© <span data-year></span><span data-requires="BRAND_NAME"> <span data-config="BRAND_NAME"></span></span>. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY BUY BAR -->
+<div class="sticky-bar" id="sticky-bar" aria-hidden="true" inert>
+  <div class="sticky-info">
+    <span class="sticky-name">Estimation Toolkit</span>
+    <span class="sticky-price"><span data-price></span> <s class="mrp mrp--sm"><span class="sr-only">Regular price </span><span data-mrp></span></s></span>
+  </div>
+  <a class="btn btn--primary btn--sticky js-buy" href="#">
+    <span>Buy Now</span>
+    <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg>
+  </a>
+</div>
+
+</body>
+</html>
