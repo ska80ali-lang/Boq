@@ -17,7 +17,7 @@ window.SITE_CONFIG = {
   DELIVERY_LINK: "/delivery",
   DISCLAIMER_LINK: "/disclaimer",
   CONTACT_LINK: "/contact",
-  META_PIXEL_ID: "",         // optional
+  META_PIXEL_ID: "1685572103078557",
   PRICE: "₹199",
   MRP: "₹999",
   IMAGES: {

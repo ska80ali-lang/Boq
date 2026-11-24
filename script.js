@@ -167,39 +167,72 @@
     return toNumber(C.PRICE) || 249;
   }
 
+  /*
+   * Landing page sends only two events:
+   *   PageView    — when the page opens
+   *   ViewContent — once per visit, when "What's Inside" scrolls into view
+   * InitiateCheckout and Purchase are sent by the SuperProfile checkout page.
+   */
   function loadPixel() {
     var id = val('META_PIXEL_ID');
     if (!id) return false;
+
+    // Standard Meta queue: fbq() calls are stored until the Facebook script arrives.
     /* eslint-disable */
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    !function (f) {
+      if (f.fbq) return; var n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
-      t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
-    }(window, doc, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    }(window);
     /* eslint-enable */
     window.fbq('init', id);
     window.fbq('track', 'PageView');
 
-    var inside = doc.getElementById('inside');
-    if (inside && 'IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        if (entries.some(function (e) { return e.isIntersecting; })) {
-          window.fbq('track', 'ViewContent', {
-            content_name: 'Construction Estimation Master Toolkit',
-            content_type: 'product',
-            value: priceValue(),
-            currency: 'INR'
-          });
-          io.disconnect();
-        }
-      }, { threshold: 0.15 });
-      io.observe(inside);
+    // The ~100 KB Facebook script loads only after the page has finished loading,
+    // so it never slows down the first view of the page.
+    function injectScript() {
+      var t = doc.createElement('script');
+      t.async = true;
+      t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+      doc.head.appendChild(t);
     }
+    if (doc.readyState === 'complete') setTimeout(injectScript, 0);
+    else window.addEventListener('load', function () { setTimeout(injectScript, 0); });
+
+    trackViewContentOnce();
     return true;
   }
 
+  function trackViewContentOnce() {
+    var KEY = 'mp_viewcontent_sent';
+    var inside = doc.getElementById('inside');
+    if (!inside) return;
+    function alreadySent() {
+      if (window.__mpViewContentSent) return true;
+      try { return sessionStorage.getItem(KEY) === '1'; } catch (err) { return false; }
+    }
+    function send() {
+      if (alreadySent()) return;
+      window.__mpViewContentSent = true;
+      try { sessionStorage.setItem(KEY, '1'); } catch (err) { /* private mode: memory flag still applies */ }
+      window.fbq('track', 'ViewContent', {
+        content_name: 'Construction Estimation Master Toolkit',
+        content_type: 'product',
+        value: priceValue(),
+        currency: 'INR'
+      });
+    }
+    if (alreadySent() || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) {
+        io.disconnect();
+        send();
+      }
+    }, { threshold: 0.15 });
+    io.observe(inside);
+  }
+
   /* ---------- Buy buttons ---------- */
-  function wireBuyButtons(pixelOn) {
+  function wireBuyButtons() {
     var link = val('BUY_LINK');
     if (!link) {
       console.warn('[SITE_CONFIG] BUY_LINK is empty — buy buttons point to "#". Add your SuperProfile checkout link in config.js.');
@@ -207,17 +240,7 @@
     $$('.js-buy').forEach(function (a) {
       a.href = link || '#';
       a.removeAttribute('target');
-      a.addEventListener('click', function (e) {
-        if (pixelOn && window.fbq) {
-          window.fbq('track', 'InitiateCheckout', { value: priceValue(), currency: 'INR' });
-        }
-        if (!link) { e.preventDefault(); return; }
-        // Give the pixel beacon a moment before same-tab navigation (plain left-click only)
-        if (pixelOn && e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
-          e.preventDefault();
-          setTimeout(function () { window.location.href = link; }, 180);
-        }
-      });
+      if (!link) a.addEventListener('click', function (e) { e.preventDefault(); });
     });
   }
 
@@ -340,8 +363,8 @@
     fillLinks();
     fillImages();
     fillHead();
-    var pixelOn = loadPixel();
-    wireBuyButtons(pixelOn);
+    loadPixel();
+    wireBuyButtons();
     initFaq();
     initReveal();
     initStickyBar();
