@@ -7,7 +7,7 @@
  *  - empty META_PIXEL_ID → no tracking script is loaded
  */
 window.SITE_CONFIG = {
-  BUY_LINK: "https://superprofile.bio/vp/construction-estimation-toolkit-?checkout=true",              // SuperProfile checkout link — used by EVERY buy button
+  BUY_LINK: "https://superprofile.bio/vp/boqmaster?checkout=true",              // SuperProfile checkout link — used by EVERY buy button
   BRAND_NAME: "",
   CONTACT_EMAIL: "ska80ali@gmail.com",
   CONTACT_PHONE: "",         // left empty on purpose — phone is not shown
